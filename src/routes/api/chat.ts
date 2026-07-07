@@ -1,4 +1,4 @@
-import { createOpenRouter } from "@openrouter/ai-sdk-provider";
+import { createGroq } from "@ai-sdk/groq";
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
 
@@ -75,12 +75,12 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Messages are required", { status: 400 });
         }
 
-        const key = process.env.OPENROUTER_API_KEY;
-        if (!key) return new Response("Missing OPENROUTER_API_KEY", { status: 500 });
+        const key = process.env.GROQ_API_KEY;
+        if (!key) return new Response("Missing GROQ_API_KEY", { status: 500 });
 
-        const openrouter = createOpenRouter({ apiKey: key });
+        const groq = createGroq({ apiKey: key });
         const result = streamText({
-          model: openrouter("google/gemini-2.0-flash-001"),
+          model: groq("llama-3.3-70b-versatile"),
           system: SYSTEM_PROMPT,
           messages: await convertToModelMessages(messages as UIMessage[]),
         });

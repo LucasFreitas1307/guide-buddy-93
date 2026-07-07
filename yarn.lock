@@ -19,6 +19,14 @@
     "@ai-sdk/provider" "4.0.2"
     "@ai-sdk/provider-utils" "5.0.5"
 
+"@ai-sdk/groq@^4.0.5":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/groq/-/groq-4.0.5.tgz#b79290ae08a157eb730dbe03e6df0ac68e68837c"
+  integrity sha512-aiAxz/Og5Z1DZ8XR7UHmb8exxXF9qHAem0TwSFod2b6Imz0AJ22tygl2M9mbv0Q5gCTWkAq7DyOXXdJYv1hzHw==
+  dependencies:
+    "@ai-sdk/provider" "4.0.2"
+    "@ai-sdk/provider-utils" "5.0.5"
+
 "@ai-sdk/mcp@2.0.7":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@ai-sdk/mcp/-/mcp-2.0.7.tgz#47a4e448213e2497d98f6347847f8ec238b1780b"
