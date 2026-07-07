@@ -11,6 +11,14 @@
     "@ai-sdk/provider-utils" "5.0.5"
     "@vercel/oidc" "3.2.0"
 
+"@ai-sdk/google@^4.0.8":
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/@ai-sdk/google/-/google-4.0.8.tgz#e5774cd7220465838968b6064135a7f007064910"
+  integrity sha512-GELd0RkltieuODzr6tfnEOIufeooctYpGUNxujeh+zrChbHUkX2K6Li4h2EAfizctkY4k3JvC93dU9eh2QxzoQ==
+  dependencies:
+    "@ai-sdk/provider" "4.0.2"
+    "@ai-sdk/provider-utils" "5.0.5"
+
 "@ai-sdk/mcp@2.0.7":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@ai-sdk/mcp/-/mcp-2.0.7.tgz#47a4e448213e2497d98f6347847f8ec238b1780b"
