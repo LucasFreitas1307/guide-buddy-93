@@ -323,6 +323,20 @@ export type MessageResponseProps = ComponentProps<typeof Streamdown>;
 
 const streamdownPlugins = { cjk, code, math, mermaid };
 
+const streamdownComponents = {
+  a: ({ href, children, ...props }: ComponentProps<"a">) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-primary underline underline-offset-2 hover:opacity-80"
+      {...props}
+    >
+      {children}
+    </a>
+  ),
+};
+
 export const MessageResponse = memo(
   ({ className, ...props }: MessageResponseProps) => (
     <Streamdown
@@ -331,6 +345,7 @@ export const MessageResponse = memo(
         className
       )}
       plugins={streamdownPlugins}
+      components={streamdownComponents}
       {...props}
     />
   ),
