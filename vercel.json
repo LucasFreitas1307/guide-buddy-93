@@ -1,0 +1,10 @@
+{
+  "buildCommand": "yarn build",
+  "installCommand": "yarn install",
+  "framework": null,
+  "build": {
+    "env": {
+      "NITRO_PRESET": "vercel"
+    }
+  }
+}
