@@ -127,7 +127,7 @@ export const Route = createFileRoute("/api/chat")({
 
         const groq = createGroq({ apiKey: key });
         const result = streamText({
-          model: groq("llama-3.1-8b-instant"),
+          model: groq("openai/gpt-oss-20b"),
           system: SYSTEM_PROMPT,
           messages: await convertToModelMessages(messages as UIMessage[]),
         });
