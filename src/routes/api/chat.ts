@@ -126,10 +126,13 @@ export const Route = createFileRoute("/api/chat")({
         if (!key) return new Response("Missing GROQ_API_KEY", { status: 500 });
 
         const groq = createGroq({ apiKey: key });
+        // Keep only the most recent turns: the system prompt alone is close to the
+        // account's per-minute token limit, so unbounded history quickly triggers 429s.
+        const recentMessages = (messages as UIMessage[]).slice(-8);
         const result = streamText({
           model: groq("openai/gpt-oss-20b"),
           system: SYSTEM_PROMPT,
-          messages: await convertToModelMessages(messages as UIMessage[]),
+          messages: await convertToModelMessages(recentMessages),
         });
 
         return result.toUIMessageStreamResponse({
